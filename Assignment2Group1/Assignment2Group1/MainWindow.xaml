@@ -9,8 +9,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment2Group1"
         mc:Ignorable="d"
-        Title="Stadium Seating Revenue Calculator" Height="350" Width="525" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Stadium Seating Revenue Calculator" Height="350" Width="550" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" Background="White">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images\stadium.jpg" />
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -25,15 +28,27 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Name="lblTitle" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Content="Stadium Seating Revenue Calculator" FontSize="31"/>
-        <Label Name="lblInstruction" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Content="Please Enter the number of seat for each class and hit Calculate button to get the total revenue." FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        
-        <Label Name="lblClass" Grid.Column="0" Grid.Row="2" Content="Class" />
-        <Label Name="lblSeatCount" Grid.Column="1" Grid.Row="2" Content="Number of Seats" />
-        <Label Name="lblClassTotal" Grid.Column="2" Grid.Row="2" Content="Amount" />
+        <Label Name="lblTitle" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Content="Stadium Seating Revenue Calculator" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Aqua"/>
+        <!--
+            <Label Name="lblInstruction" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Content="Please Enter the number of seat for each class and hit Calculate button to get the total revenue." FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Aqua"/>
+        -->
+        <Label Name="lblClass" Grid.Column="0" Grid.Row="2" Content="Class"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Aqua"/>
+        <Label Name="lblSeatCount" Grid.Column="1" Grid.Row="2" Content="Number of Seats" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Aqua"/>
+        <Label Name="lblClassTotal" Grid.Column="2" Grid.Row="2" Content="Amount" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="Aqua"/>
 
-        <Label Name="lblClassA" Grid.Column="0" Grid.Row="3" Content="Class A ($15 Per Seat)" FontSize="16" VerticalAlignment="Center"/>
-        <Label Name="lblClassB" Grid.Column="0" Grid.Row="4" Content="Class B ($12 Per Seat)" FontSize="16" VerticalAlignment="Center"/>
-        <Label Name="lblClassC" Grid.Column="0" Grid.Row="5" Content="Class C ($09 Per Seat)" FontSize="16" VerticalAlignment="Center"/>
+        <Label Name="lblClassA" Grid.Column="0" Grid.Row="3" Content="Class A ($15 Per Seat)" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Aqua"/>
+        <Label Name="lblClassB" Grid.Column="0" Grid.Row="4" Content="Class B ($12 Per Seat)" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Aqua"/>
+        <Label Name="lblClassC" Grid.Column="0" Grid.Row="5" Content="Class C ($09 Per Seat)" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Aqua" />
+
+        <TextBox Name="txtClassA" Text="0" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Right" Height="20" Width="100"/>
+        <TextBox Name="txtClassB" Text="0" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Right" Height="20" Width="100"/>
+        <TextBox Name="txtClassC" Text="0" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Right" Height="20" Width="100"/>
+
+        <Label Name="lblClassATotal" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Height="30" Width="140" Foreground="Aqua"/>
+        <Label Name="lblClassBTotal" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Height="30" Width="140" Foreground="Aqua"/>
+        <Label Name="lblClassCTotal" Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Height="30" Width="140" Foreground="Aqua"/>
+        <Label Name="lblGrandTotal" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Height="30" Width="140" Foreground="Aqua" FontWeight="Bold"/>
+
+        <Button Name="btnCalculate" Grid.Column="1" Grid.Row="6" Content="Calculate" Margin="10" Click="btnCalculate_Click" FontWeight="Bold"/>
     </Grid>
 </Window>
